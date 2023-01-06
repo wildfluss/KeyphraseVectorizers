@@ -298,7 +298,7 @@ class KeyphraseCountVectorizer(_KeyphraseVectorizerMixin, BaseEstimator):
                 return CountVectorizer(vocabulary=self.keyphrases,
                                        ngram_range=(self.min_n_gram_length, self.max_n_gram_length),
                                        lowercase=self.lowercase, binary=self.binary,
-                                       dtype=self.dtype).get_feature_names()
+                                       dtype=self.dtype).get_feature_names_out()
         except AttributeError:
             raise DeprecationWarning("get_feature_names() is deprecated. Please use 'get_feature_names_out()' instead.")
 
